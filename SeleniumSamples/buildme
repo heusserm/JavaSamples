@@ -1,0 +1,2 @@
+javac -classpath .:client-combined-3.14.0.jar Sample.java
+jar cmvf META-INF/MANIFEST.MF Sample.jar Sample.class  -C libs/ .
