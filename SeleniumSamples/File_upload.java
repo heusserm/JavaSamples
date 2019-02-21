@@ -26,8 +26,8 @@ public class File_upload  {
 
         DesiredCapabilities capabillities = DesiredCapabilities.chrome();
 
-        String USERNAME = "mheusser";
-        String ACCESS_KEY = "4cc8aa16-d0c6-4f65-b925-d56eea0f3fe4";
+        String USERNAME = "USERNAME";
+        String ACCESS_KEY = "ACCESS_KEY";
         String url =  "https://" + USERNAME + ":" + ACCESS_KEY + "@ondemand.saucelabs.com:443/wd/hub";
 
         URL start_url;
