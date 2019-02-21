@@ -14,10 +14,7 @@ import org.openqa.selenium.Platform;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.remote.LocalFileDetector;
-
-
 import java.util.concurrent.TimeUnit;
-
 import java.net.URL;
 
 public class File_upload  {
@@ -51,7 +48,7 @@ public class File_upload  {
         //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         //------------------------------------
         
-        driver.get("http://xndev.rumspeed.com/display-image/");
+        driver.get("http://xndev.com/display-image/");
      
 
         WebElement upload = driver.findElement(By.xpath("//*[@id='post-2554']/div/input"));
