@@ -51,7 +51,7 @@ public class File_upload  {
         driver.get("http://xndev.com/display-image/");
      
 
-        WebElement upload = driver.findElement(By.xpath("//*[@id='post-2554']/div/input"));
+        WebElement upload = driver.findElement(By.xpath("//*[@id='post-2122']/div/input"));
         
         //In windows the slash below will need to be reversed
         upload.sendKeys(System.getProperty("user.dir") + '/' + "broken_bulb.jpg");
