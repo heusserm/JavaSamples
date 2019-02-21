@@ -1,0 +1,2 @@
+javac -classpath .:client-combined-3.14.0.jar File_upload.java
+jar cmvf META-INF/MANIFEST.MF File_upload.jar File_upload.class  -C libs/ .
