@@ -1,0 +1,12 @@
+JUnit version 4.13.2
+..E.
+Time: 0.008
+There was 1 failure:
+1) test_bignum(triangleSpecialCasesTest)
+org.junit.ComparisonFailure: MAXINT is still equilateral expected:<[equilateral]> but was:<[not a triangle]>
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at triangleSpecialCasesTest.test_bignum(triangleSpecialCasesTest.java:25)
+
+FAILURES!!!
+Tests run: 3,  Failures: 1
+
