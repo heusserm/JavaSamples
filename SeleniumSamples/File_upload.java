@@ -14,25 +14,17 @@ import org.openqa.selenium.Platform;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.remote.LocalFileDetector;
-
-
 import java.util.concurrent.TimeUnit;
-
 import java.net.URL;
 
 public class File_upload  {
     public static void main(String[] args)  {        
-        //System.setProperty("webdriver.chrome.driver","/opt/local/bin/chromedriver");
         System.setProperty("webdriver.chrome.driver","./chromedriver");
 
         DesiredCapabilities capabillities = DesiredCapabilities.chrome();
-        //capabillities.setCapability("version", "72.0.3626.109");
-        //capabillities.setCapability("platform", Platform.WINDOWS);
-        //capabillities.setCapability("selenium-version", "3.141.59");
-        //capabillities.setCapability("name", "Remote File Upload using Selenium 3's FileDetectors");
 
-        String USERNAME = "YOUR_USERNAME";
-        String ACCESS_KEY = "YOUR_ACCESS_KEY";
+        String USERNAME = "USERNAME";
+        String ACCESS_KEY = "ACCESS_KEY";
         String url =  "https://" + USERNAME + ":" + ACCESS_KEY + "@ondemand.saucelabs.com:443/wd/hub";
 
         URL start_url;
@@ -41,36 +33,30 @@ public class File_upload  {
         } catch(MalformedURLException ex) {
             return; 
         }
-                   
-        //RemoteWebDriver driver = new RemoteWebDriver(start_url, capabillities);        
-        //driver.setFileDetector(new LocalFileDetector());
         
+        //-----------------------------------
+        // These are the Remotewebdriver lines
+        // Comment them out to run locally
+        RemoteWebDriver driver = new RemoteWebDriver(start_url, capabillities);        
+        driver.setFileDetector(new LocalFileDetector());
+        //------------------------------------
         
-        WebDriver driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        //------------------------------------
+        // These are the local webdriver lines
+        // Uncomment them to run locally
+        //WebDriver driver = new ChromeDriver();
+        //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        //------------------------------------
         
+        driver.get("http://xndev.com/display-image/");
+     
 
+        WebElement upload = driver.findElement(By.xpath("//*[@id='post-2122']/div/input"));
         
-        //driver.get("https://codepen.io/mobifreaks/pen/LIbca");
-        driver.get("https://jsbin.com/uboqu3/1/edit?html,css,js,console,output");
+        //In windows the slash below will need to be reversed
+        upload.sendKeys(System.getProperty("user.dir") + '/' + "broken_bulb.jpg");
 
-        //If this gets out of date, try:
-        //https://web.archive.org/web/20190126223837/https://fineuploader.com/demos.html
-        //
-        //The whole thing seems to run in javascript.
-        //
-        //If The wayback machine gets out of date, then we've got a problem.
-        
-        WebElement upload = driver.findElement(By.xpath("//input[type()='file']"));
-        upload.sendKeys("broken_bulb.jpg");
-        //driver.findElement(By.id("submit")).click();
-        //upload.click();
 
-        try {
-        Thread.sleep(2000);
-        } catch (Exception e) {
-           return;
-        }
         WebElement img = driver.findElement(By.xpath("//img['data:image/jpeg;base64'=substring(@src,1,22)]"));
 
         driver.quit();
