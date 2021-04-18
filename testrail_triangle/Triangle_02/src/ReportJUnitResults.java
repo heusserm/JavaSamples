@@ -108,7 +108,7 @@ public class ReportJUnitResults {
 		  int status_id;
 		  byte[] byteResults = java.nio.file.Files.readAllBytes(path);
 		  String stringResults = new String (byteResults, StandardCharsets.UTF_8);
-		  if ( stringResults.contains("Test successful? true")) {
+		  if ( stringResults.contains("\nOK (")) {
 		      status_id = 1;
 		      bRunpassed = true;
 		  } else {
