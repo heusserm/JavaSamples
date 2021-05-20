@@ -1,0 +1,23 @@
+stages:
+     - build
+     - test
+     - report
+
+build-job:
+  stage: build
+  script:
+    - cd testrail_triangle/Triangle_02/ 
+    - ./01build.sh
+
+test-job:
+  stage: test
+  script:
+    - cd testrail_triangle/Triangle_02/
+    - ./02test.sh
+
+report-job:
+   stage: report
+   script
+   - cd testrail_triangle/Triangle_02/
+   - ./03report.sh
+

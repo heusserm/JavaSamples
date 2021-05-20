@@ -15,4 +15,4 @@ java -cp junit-4.13.2.jar:hamcrest-2.2.jar:. org.junit.runner.JUnitCore triangle
 #You can do a file->export runnable Jar file and 
 
 #UNCOMMENT THE LINE BELOW ONCE YOU HAVE PUT YOUR OWN JAR FILE IN PLACE 
-#java -jar ResportJUnitResults.jar
+#java -jar ReportJUnitResults.jar
