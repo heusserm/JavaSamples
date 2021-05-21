@@ -17,7 +17,7 @@ test-job:
 
 report-job:
    stage: report
-   script
+   script:
    - cd testrail_triangle/Triangle_02/
    - ./03report.sh
 
