@@ -6,18 +6,20 @@ stages:
 build-job:
   stage: build
   script:
-    - cd testrail_triangle/Triangle_02/ 
+    - cd testrail_triangle/Triangle_02/build 
+    - ls -l
     - ./01build.sh
 
 test-job:
   stage: test
   script:
-    - cd testrail_triangle/Triangle_02/
+    - cd testrail_triangle/Triangle_02/build
+    - ls -l
     - ./02test.sh
 
 report-job:
    stage: report
    script:
-   - cd testrail_triangle/Triangle_02/
+   - cd testrail_triangle/Triangle_02/build
    - ./03report.sh
 
