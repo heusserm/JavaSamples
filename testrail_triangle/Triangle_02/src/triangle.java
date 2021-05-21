@@ -32,10 +32,7 @@ public class triangle {
 		   return "isosceles";
 	   }
 	   
-	   return "scalene";
-	   
-	   
-
+	   return "scalene";	   
    }
 
 }
