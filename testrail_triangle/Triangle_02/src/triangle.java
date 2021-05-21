@@ -21,7 +21,8 @@ public class triangle {
 			(x<0 || y<0 || z<0)
           ) {
 	      return "not a triangle";
-	   }
+
+       }
 	
 	   if (x==y && y==z) {
 		   return "equilateral";
