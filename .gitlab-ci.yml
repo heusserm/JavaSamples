@@ -1,26 +1,11 @@
 stages:
-     - build
-     - test
-     - report
+     - buildtestreport
 
 build-job:
   stage: build
   script:
     - cd testrail_triangle/Triangle_02/build 
-    - ls -l
     - ./01build.sh
-
-test-job:
-  stage: test
-  allow_failure: true
-  script:
-    - cd testrail_triangle/Triangle_02/build
-    - ls -l
     - ./02test.sh
-
-report-job:
-   stage: report
-   script:
-   - cd testrail_triangle/Triangle_02/build
-   - ./03report.sh
+    - ./03report.sh
 
