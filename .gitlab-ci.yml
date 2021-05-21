@@ -12,6 +12,7 @@ build-job:
 
 test-job:
   stage: test
+  allow_failure: true
   script:
     - cd testrail_triangle/Triangle_02/build
     - ls -l
