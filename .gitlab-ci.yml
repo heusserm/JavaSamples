@@ -2,7 +2,7 @@ stages:
      - buildtestreport
 
 build-job:
-  stage: build
+    stage: buildtestreport
   script:
     - cd testrail_triangle/Triangle_02/build 
     - ./01build.sh
